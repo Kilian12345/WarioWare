@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace jaws {
-
-	public class BoxSpawner : MonoBehaviour {
+namespace Game.Jaws
+{
+    public class BoxSpawner : MonoBehaviour {
 		public GameObject box;
 
 		private void Update () {

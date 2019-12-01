@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace jaws {
-
-	public class DynamicWater2D : MonoBehaviour {
+namespace Game.Jaws
+{
+    public class DynamicWater2D : MonoBehaviour {
 
 		[System.Serializable]
 		public struct Bound {

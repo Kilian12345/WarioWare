@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2fcdcfd9d60bfe4c89b024ff6caf274, type: 3}
   m_Name: NomDeVotreJeu ID
   m_EditorClassIdentifier: 
-  gameName: 
+  gameName: Jaws
   description: 
   verb: 
   serieConstraints: 0
