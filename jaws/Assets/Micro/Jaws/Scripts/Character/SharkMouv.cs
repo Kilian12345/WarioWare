@@ -7,7 +7,9 @@ namespace Game.Jaws
         [SerializeField] Transform PointA;
         [SerializeField] Transform PointB;
 
+        public float sharkSpeed = 0.01f;
         float mouseBasePosition;
+
         private void Start()
         {
             mouseBasePosition = 0;
@@ -15,10 +17,11 @@ namespace Game.Jaws
 
         private void Update()
         {
-            mouseBasePosition += Input.GetAxis("Mouse X") * 0.5f;
+            mouseBasePosition += Input.GetAxis("Mouse X") * sharkSpeed;
 
             Vector3 pos = transform.position;
-            pos.x = mouseBasePosition;
+            pos.x += mouseBasePosition;
+            pos.x = Mathf.Clamp(pos.x, PointA.position.x, PointB.position.x);
             transform.position = pos;
         }
     }
