@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace Game.Jaws
 {
@@ -6,6 +8,14 @@ namespace Game.Jaws
     {
         [SerializeField] Transform PointA;
         [SerializeField] Transform PointB;
+
+        [SerializeField] Rigidbody2D sharkBody;
+        [SerializeField] Collider2D isGround;
+
+        [SerializeField] Vector2 directionRight;
+        [SerializeField] Vector2 directionLeft;
+        Vector2 jumpDirection;
+
 
         public float sharkSpeed = 0.01f;
         float mouseBasePosition;
@@ -15,22 +25,49 @@ namespace Game.Jaws
         public float curveHeight;
         public float curveWidth;
 
+        float basePosition;
+        float targetPosition;
+
+        bool isGrounded;
+
 
 
         private void Start()
         {
             mouseBasePosition = 0;
+
+            sharkBody = GetComponent<Rigidbody2D>();
+            isGround = GetComponentInChildren<Collider2D>();
+
+            Vector3 pos = transform.position;
+            basePosition = pos.y;
+            targetPosition = curveHeight;
+            transform.position = pos;
         }
 
         private void Update()
         {
-            Mouvement();
-
-            if(Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) && isGrounded == true)
             {
                 Jump();
+                isGrounded = false;
+            }
+
+            if (isGrounded == true)
+            {
+                Mouvement();
+            }
+
+        }
+
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            if (collision.gameObject.layer == 4)
+            {
+                isGrounded = true;
             }
         }
+
 
         void Mouvement()
         {
@@ -44,9 +81,16 @@ namespace Game.Jaws
 
         void Jump()
         {
-            Vector3 pos = transform.position;
-            pos.y = Mathf.Sin(pos.x * curveWidth);
-            transform.position = pos;
+            if (mouseBasePosition < 0)
+            { jumpDirection = directionLeft; }
+            else if (mouseBasePosition > 0)
+            {jumpDirection = directionRight;}
+
+            mouseBasePosition = 0;
+
+            sharkBody.AddForce(jumpDirection * 500.0f);
         }
+
+
     }
 }
