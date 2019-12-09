@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace Game.Jaws
 {
-    public class SharkMouv : MonoBehaviour
+    public class SharkMouv : MicroMonoBehaviour
     {
         [SerializeField] Transform PointA;
         [SerializeField] Transform PointB;

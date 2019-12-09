@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace Game.Jaws
 {
-    public class DynamicWater2D : MonoBehaviour {
+    public class DynamicWater2D : MicroMonoBehaviour
+    {
 
 		[System.Serializable]
 		public struct Bound {

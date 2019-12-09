@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Jaws
 {
-    public class Bird : MonoBehaviour
+    public class Bird : MicroMonoBehaviour
     {
         [SerializeField] Transform endPositionBird;
         Vector3 startPoint;
@@ -11,24 +11,37 @@ namespace Game.Jaws
         float t = 0;
 
         public int timeInBpm = 8;
-        int bpm;
+        float bpm;
 
-        private void Awake()
+        private void Start()
         {
+            Macro.StartGame();
+
             startPoint = transform.position;
-            bpm = Macro.BPM;
+            //bpm = Macro.BPM;
+            bpm = 96;
+        }
+
+        protected override void OnGameStart()
+        {
+            
         }
 
         private void Update()
         {
-            mouvTime = (60 / bpm) * timeInBpm;
+            mouvTime = (60f / bpm) * timeInBpm;
             t += Time.deltaTime;
             float alede = t / mouvTime;
 
             transform.position = Vector3.Lerp(startPoint, endPositionBird.position, alede);
 
 
-            Debug.Log(startPoint);
+            Debug.Log(mouvTime);
+
+            if(transform.position == endPositionBird.position)
+            {
+                Macro.Lose();
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -36,6 +49,9 @@ namespace Game.Jaws
             if (collision.gameObject.layer == 0)
             {
                 Debug.Log("ALLAAAAAAAAAAAAAAAAAAAAH");
+                Macro.Win();
+                Macro.EndGame();
+
             }
         }
 
