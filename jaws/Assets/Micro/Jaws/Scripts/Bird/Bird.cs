@@ -4,11 +4,26 @@ namespace Game.Jaws
 {
     public class Bird : MonoBehaviour
     {
+        [SerializeField] Transform endPositionBird;
+        Vector3 startPoint;
+
+        public float mouvTime;
+        float t = 0;
+
+        private void Awake()
+        {
+            startPoint = transform.position;
+        }
+
         private void Update()
         {
-            Vector3 pos = transform.position;
-            pos.x -= 0.05f;
-            transform.position = pos;
+            t += Time.deltaTime;
+            float alede = t / mouvTime;
+
+            transform.position = Vector3.Lerp(startPoint, endPositionBird.position, alede);
+
+
+            Debug.Log(startPoint);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -18,5 +33,6 @@ namespace Game.Jaws
                 Debug.Log("ALLAAAAAAAAAAAAAAAAAAAAH");
             }
         }
+
     }
 }
