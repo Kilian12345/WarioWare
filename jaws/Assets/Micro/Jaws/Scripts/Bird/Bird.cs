@@ -7,16 +7,21 @@ namespace Game.Jaws
         [SerializeField] Transform endPositionBird;
         Vector3 startPoint;
 
-        public float mouvTime;
+        float mouvTime;
         float t = 0;
+
+        public int timeInBpm = 8;
+        int bpm;
 
         private void Awake()
         {
             startPoint = transform.position;
+            bpm = Macro.BPM;
         }
 
         private void Update()
         {
+            mouvTime = (60 / bpm) * timeInBpm;
             t += Time.deltaTime;
             float alede = t / mouvTime;
 

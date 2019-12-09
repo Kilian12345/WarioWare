@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: NomDeVotreJeu ID
   m_EditorClassIdentifier: 
   gameName: Jaws
-  description: 
-  verb: 
+  description: 'C''est un requin qui doit sauter en dehors de l''eau pour manger une
+    mouette
+
+'
+  verb: EAT!
   serieConstraints: 0
   scene:
-    m_SceneAsset: {fileID: 0}
-    m_SceneName: 
-  designer: 
-  programmer: 
+    m_SceneAsset: {fileID: 102900000, guid: 412990d1657ffec46839402e738375b9, type: 3}
+    m_SceneName: ExportScene
+  designer: Quentin Roussel
+  programmer: Kilian Allaire
   thumbnail: {fileID: 0}
   inputSprite: {fileID: 0}
   data: {}
