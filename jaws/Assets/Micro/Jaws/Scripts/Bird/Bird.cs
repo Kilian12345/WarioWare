@@ -24,7 +24,8 @@ namespace Game.Jaws
 
         protected override void OnGameStart()
         {
-            
+            Macro.StartTimer(9, true);
+            Macro.DisplayActionVerb("Eat!", 1);
         }
 
         private void Update()
@@ -42,6 +43,7 @@ namespace Game.Jaws
             {
                 Debug.Log("Lose");
                 Macro.Lose();
+                Macro.EndGame();
             }
         }
 
