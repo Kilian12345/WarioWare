@@ -18,8 +18,8 @@ namespace Game.Jaws
             Macro.StartGame();
 
             startPoint = transform.position;
-            //bpm = Macro.BPM;
-            bpm = 96;
+            bpm = Macro.BPM;
+            //bpm = 96;
         }
 
         protected override void OnGameStart()
@@ -40,6 +40,7 @@ namespace Game.Jaws
 
             if(transform.position == endPositionBird.position)
             {
+                Debug.Log("Lose");
                 Macro.Lose();
             }
         }
@@ -48,12 +49,11 @@ namespace Game.Jaws
         {
             if (collision.gameObject.layer == 0)
             {
-                Debug.Log("ALLAAAAAAAAAAAAAAAAAAAAH");
+                Debug.Log("WIN");
                 Macro.Win();
                 Macro.EndGame();
 
             }
         }
-
     }
 }
