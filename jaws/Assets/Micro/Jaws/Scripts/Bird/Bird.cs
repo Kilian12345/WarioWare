@@ -5,7 +5,9 @@ namespace Game.Jaws
     public class Bird : MicroMonoBehaviour
     {
         [SerializeField] GameObject bite;
+        [SerializeField] GameObject feather;
         Transform parentTrans;
+        GameManager gameMana;
 
         [SerializeField] Transform endPositionBird;
         Vector3 startPoint;
@@ -18,6 +20,7 @@ namespace Game.Jaws
 
         private void Start()
         {
+            gameMana = FindObjectOfType<GameManager>();
             parentTrans = GameObject.Find("___Character___").transform;
             startPoint = transform.position;
             bpm = Macro.BPM;
@@ -51,9 +54,7 @@ namespace Game.Jaws
 
             if(transform.position == endPositionBird.position)
             {
-                Debug.Log("Lose");
-                Macro.Lose();
-                Macro.EndGame();
+                gameMana.lose = true;
             }
         }
 
@@ -61,12 +62,11 @@ namespace Game.Jaws
         {
 
             Instantiate(bite, transform.position, Quaternion.identity, parentTrans);
+            Instantiate(feather, transform.position, Quaternion.identity, parentTrans);
             if (collision.gameObject.layer == 0)
             {
-                Debug.Log("WIN");
-                Macro.Win();
-                Macro.EndGame();
-
+                gameMana.win = true;
+                Destroy(gameObject);
             }
         }
     }

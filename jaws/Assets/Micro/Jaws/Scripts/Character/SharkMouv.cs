@@ -6,6 +6,8 @@ namespace Game.Jaws
 {
     public class SharkMouv : MicroMonoBehaviour
     {
+        GameManager gameMana;
+
         [SerializeField] Transform PointA;
         [SerializeField] Transform PointB;
 
@@ -38,6 +40,8 @@ namespace Game.Jaws
 
         private void Start()
         {
+            gameMana = FindObjectOfType<GameManager>();
+
             mouseBasePosition = 0;
 
             childRender = GetComponentInChildren<SpriteRenderer>();
@@ -58,10 +62,12 @@ namespace Game.Jaws
             {
                 Jump();
                 isGrounded = false;
+                gameMana.IsSharkGrounded = false;
             }
 
             if (isGrounded == true)
             {
+                gameMana.IsSharkGrounded = true;
                 animator.SetBool("IsJumpingRight", false);
                 animator.SetBool("IsJumpingLeft", false);
                 Mouvement();
@@ -87,10 +93,12 @@ namespace Game.Jaws
             if(mouseBasePosition > 0)
             {
                 childRender.flipX = true;
+                gameMana.IsSharkFliped = true;
             }
             else
             {
                 childRender.flipX = false;
+                gameMana.IsSharkFliped = false;
             }
         }
 
