@@ -39,8 +39,13 @@ namespace Game.Jaws
 
 		private float timer;
 
+        Transform transParent;
+
 		private void Start () {
-			InitializePhysics ();
+
+            transParent = GameObject.Find("___SpawnZone___").transform;
+
+            InitializePhysics ();
 			GenerateMesh ();
 			SetBoxCollider2D ();
 		}
@@ -141,7 +146,7 @@ namespace Game.Jaws
 			float radius = col.bounds.max.x - col.bounds.min.x;
 			Vector2 center = new Vector2(col.bounds.center.x, bound.top) ;
 			// instantiate splash particle
-			GameObject splashGO = Instantiate(splash, new Vector3(center.x, center.y, 0), Quaternion.Euler(0,0,60));
+			GameObject splashGO = Instantiate(splash, new Vector3(center.x, center.y, 0), Quaternion.Euler(-90,0,60), transParent);
 			Destroy(splashGO, 2f);
 
 			// applying physics
