@@ -391,21 +391,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 322.4, y: -50, z: 0}
   rawBottomRightBounds: {x: -322.4, y: 50, z: 0}
   rawBottomRightTextBounds: {x: 156, y: -70, z: 0}
-  topLeftBounds: {x: 167.98064, y: 340.80313, z: 0}
-  topRightBounds: {x: 509.01935, y: 340.80313, z: 0}
-  bottomLeftBounds: {x: 167.98064, y: 287.9125, z: 0}
-  bottomRightBounds: {x: 509.01935, y: 287.9125, z: 0}
-  centerBounds: {x: 338.5, y: 314.35782, z: 0}
-  topLeftTextBounds: {x: 297.2453, y: 332.86954, z: 0}
-  topRightTextBounds: {x: 379.7547, y: 332.86954, z: 0}
-  bottomLeftTextBounds: {x: 297.2453, y: 295.8461, z: 0}
-  bottomRightTextBounds: {x: 379.7547, y: 295.8461, z: 0}
-  centerTextBounds: {x: 338.5, y: 314.35782, z: 0}
-  finalTopLeftTextBounds: {x: 297.2453, y: 332.86954, z: 0}
-  finalTopRightTextBounds: {x: 379.7547, y: 332.86954, z: 0}
-  finalBottomLeftTextBounds: {x: 297.2453, y: 295.8461, z: 0}
-  finalBottomRightTextBounds: {x: 379.7547, y: 295.8461, z: 0}
-  finalCenterTextBounds: {x: 338.5, y: 314.35782, z: 0}
+  topLeftBounds: {x: 149.8675, y: 304.1375, z: 0}
+  topRightBounds: {x: 454.1325, y: 304.1375, z: 0}
+  bottomLeftBounds: {x: 149.8675, y: 256.95, z: 0}
+  bottomRightBounds: {x: 454.1325, y: 256.95, z: 0}
+  centerBounds: {x: 302, y: 280.54376, z: 0}
+  topLeftTextBounds: {x: 265.19376, y: 297.0594, z: 0}
+  topRightTextBounds: {x: 338.80624, y: 297.0594, z: 0}
+  bottomLeftTextBounds: {x: 265.19376, y: 264.02814, z: 0}
+  bottomRightTextBounds: {x: 338.80624, y: 264.02814, z: 0}
+  centerTextBounds: {x: 302, y: 280.54376, z: 0}
+  finalTopLeftTextBounds: {x: 265.19376, y: 297.0594, z: 0}
+  finalTopRightTextBounds: {x: 338.80624, y: 297.0594, z: 0}
+  finalBottomLeftTextBounds: {x: 265.19376, y: 264.02814, z: 0}
+  finalBottomRightTextBounds: {x: 338.80624, y: 264.02814, z: 0}
+  finalCenterTextBounds: {x: 302, y: 280.54376, z: 0}
   unwrappedBottomRightTextBounds: {x: 156, y: -70, z: 0}
   onCompleteEvent:
     m_PersistentCalls:

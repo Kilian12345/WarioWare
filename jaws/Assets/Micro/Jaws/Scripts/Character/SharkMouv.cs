@@ -13,6 +13,8 @@ namespace Game.Jaws
         [SerializeField] Collider2D isGround;
 
         SpriteRenderer childRender;
+        Animator animator;
+        bool jumpAnimOnce = false;
 
         [SerializeField] Vector2 directionRight;
         [SerializeField] Vector2 directionLeft;
@@ -39,6 +41,8 @@ namespace Game.Jaws
             mouseBasePosition = 0;
 
             childRender = GetComponentInChildren<SpriteRenderer>();
+            animator = GetComponent<Animator>();
+
             sharkBody = GetComponent<Rigidbody2D>();
             isGround = GetComponentInChildren<Collider2D>();
 
@@ -58,8 +62,13 @@ namespace Game.Jaws
 
             if (isGrounded == true)
             {
+                animator.SetBool("IsJumpingRight", false);
+                animator.SetBool("IsJumpingLeft", false);
                 Mouvement();
             }
+
+            Debug.Log(animator.GetBool("IsJumpingRight") + " IsJumpingRight");
+            Debug.Log(animator.GetBool("IsJumpingLeft") + " IsJumpingLeft");
 
             Flip();
 
@@ -103,14 +112,19 @@ namespace Game.Jaws
             else if (mouseBasePosition > 0)
             {jumpDirection = directionRight;}
 
-            if (childRender.flipX == true)
-            {
-                mouseBasePosition = 0.1f;
-            }
-            else
-            {
-                mouseBasePosition = 0;
-            }
+
+                if (childRender.flipX == true)
+                {
+                    animator.SetBool("IsJumpingRight", true);
+                    animator.SetBool("IsJumpingLeft", false);
+                    mouseBasePosition = 0.1f;
+                }
+                else
+                {
+                    animator.SetBool("IsJumpingRight", false);
+                    animator.SetBool("IsJumpingLeft", true);
+                    mouseBasePosition = 0;
+                }
 
             sharkBody.AddForce(jumpDirection * 500.0f);
         }
