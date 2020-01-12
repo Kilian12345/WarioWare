@@ -767,6 +767,8 @@ MonoBehaviour:
     type: 3}
   Obstacle2: {fileID: 2550557517964760997, guid: c0191de46079a084a9eb4a68c0ab9b5f,
     type: 3}
+  Obstacle3: {fileID: 4341633541083817158, guid: 3be45da62f71aaa41bef737de76e7a40,
+    type: 3}
 --- !u!1 &1375333801
 GameObject:
   m_ObjectHideFlags: 0
