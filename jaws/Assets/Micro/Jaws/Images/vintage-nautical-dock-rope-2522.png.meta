@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: 254f81831f6416045b9877249ea480b5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3241026858557976173
+    second: vintage-nautical-dock-rope-2522_0
+  - first:
+      213: -8260714870730977410
+    second: vintage-nautical-dock-rope-2522_1
+  - first:
+      213: -5761924213310735125
+    second: vintage-nautical-dock-rope-2522_2
+  - first:
+      213: -1726313147896238431
+    second: vintage-nautical-dock-rope-2522_3
+  - first:
+      213: -16261367345529203
+    second: vintage-nautical-dock-rope-2522_4
+  - first:
+      213: -4490510405564779648
+    second: vintage-nautical-dock-rope-2522_5
+  - first:
+      213: -7381394780867004462
+    second: vintage-nautical-dock-rope-2522_6
+  - first:
+      213: 3531830845009806560
+    second: vintage-nautical-dock-rope-2522_7
+  - first:
+      213: -8232568106875478363
+    second: vintage-nautical-dock-rope-2522_8
+  - first:
+      213: 1616332217698191769
+    second: vintage-nautical-dock-rope-2522_9
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vintage-nautical-dock-rope-2522_0
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 1274
+        width: 296
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b17be3d7a4eedf4ca3d844c546e5cca
+      internalID: 3241026858557976173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vintage-nautical-dock-rope-2522_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 975
+        width: 270
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9b3f500aa2c9e45a26e9e869831d64
+      internalID: -8260714870730977410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vintage-nautical-dock-rope-2522_2
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 973
+        width: 296
+        height: 297
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0232a4dd535dd42bb6627a8eb6d4d4
+      internalID: -5761924213310735125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vintage-nautical-dock-rope-2522_3
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 672
+        width: 295
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cdb99fd5c172b4cb3dd1d776c269ea
+      internalID: -1726313147896238431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vintage-nautical-dock-rope-2522_4
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 372
+        width: 291
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58bcdf9bc8c2c7418360e1803e56ce8
+      internalID: -16261367345529203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vintage-nautical-dock-rope-2522_5
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 72
+        width: 293
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b12545adcc08342b98d6c3114639c1
+      internalID: -4490510405564779648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vintage-nautical-dock-rope-2522_6
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 1274
+        width: 295
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3caae03a581b89e4698382761d78bf99
+      internalID: -7381394780867004462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vintage-nautical-dock-rope-2522_7
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 973
+        width: 296
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb569c82b619e58468e0cbd79c151393
+      internalID: 3531830845009806560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vintage-nautical-dock-rope-2522_8
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 672
+        width: 296
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f3d9ab754b743419ba8bb06df066db
+      internalID: -8232568106875478363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vintage-nautical-dock-rope-2522_9
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 373
+        width: 295
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 812a32dde5537c345b932400c8d02d79
+      internalID: 1616332217698191769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -2, y: -2}
+      - {x: -2, y: 2}
+      - {x: 2, y: 2}
+      - {x: 2, y: -2}
+    physicsShape:
+    - - {x: -2, y: -2}
+      - {x: -2, y: 2}
+      - {x: 2, y: 2}
+      - {x: 2, y: -2}
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

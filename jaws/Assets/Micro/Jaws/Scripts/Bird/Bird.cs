@@ -4,6 +4,9 @@ namespace Game.Jaws
 {
     public class Bird : MicroMonoBehaviour
     {
+        [SerializeField] GameObject bite;
+        Transform parentTrans;
+
         [SerializeField] Transform endPositionBird;
         Vector3 startPoint;
 
@@ -15,7 +18,7 @@ namespace Game.Jaws
 
         private void Start()
         {
-
+            parentTrans = GameObject.Find("___Character___").transform;
             startPoint = transform.position;
             bpm = Macro.BPM;
             //bpm = 96;
@@ -56,6 +59,8 @@ namespace Game.Jaws
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+
+            Instantiate(bite, transform.position, Quaternion.identity, parentTrans);
             if (collision.gameObject.layer == 0)
             {
                 Debug.Log("WIN");

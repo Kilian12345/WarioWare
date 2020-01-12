@@ -387,7 +387,7 @@ MonoBehaviour:
   verticalLimitMode: 2
   leftoverText: 
   textMaterial: {fileID: 2100000, guid: e490a80c3724140c0ad176edb075a09e, type: 2}
-  textMesh: {fileID: 1605487724}
+  textMesh: {fileID: 1679181105}
   rawTopLeftBounds: {x: 322.4, y: -50, z: 0}
   rawBottomRightBounds: {x: -322.4, y: 50, z: 0}
   rawBottomRightTextBounds: {x: 156, y: -70, z: 0}
@@ -1003,7 +1003,7 @@ Transform:
   m_Father: {fileID: 769713756}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1605487724
+--- !u!43 &1679181105
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2fcdcfd9d60bfe4c89b024ff6caf274, type: 3}
-  m_Name: NomDeVotreJeu ID
+  m_Name: Jaws ID
   m_EditorClassIdentifier: 
   gameName: Jaws
   description: 'C''est un requin qui doit sauter en dehors de l''eau pour manger une
@@ -20,7 +20,7 @@ MonoBehaviour:
   verb: EAT!
   serieConstraints: 0
   scene:
-    m_SceneAsset: {fileID: 102900000, guid: 412990d1657ffec46839402e738375b9, type: 3}
+    m_SceneAsset: {fileID: 102900000, guid: e22b9fac9eeceb74189cde5f547dab3a, type: 3}
     m_SceneName: ExportScene
   designer: Quentin Roussel
   programmer: Kilian Allaire
