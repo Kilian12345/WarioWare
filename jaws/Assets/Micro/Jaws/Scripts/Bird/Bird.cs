@@ -15,17 +15,23 @@ namespace Game.Jaws
 
         private void Start()
         {
-            Macro.StartGame();
 
             startPoint = transform.position;
             bpm = Macro.BPM;
             //bpm = 96;
+
+            Macro.StartGame();
         }
 
         protected override void OnGameStart()
         {
-            Macro.StartTimer(9, true);
             Macro.DisplayActionVerb("Eat!", 1);
+        }
+
+        protected override void OnActionVerbDisplayEnd()
+        {
+            Macro.StartTimer(8);
+
         }
 
         private void Update()
@@ -33,6 +39,7 @@ namespace Game.Jaws
             mouvTime = (60f / bpm) * timeInBpm;
             t += Time.deltaTime;
             float alede = t / mouvTime;
+
 
             transform.position = Vector3.Lerp(startPoint, endPositionBird.position, alede);
 
