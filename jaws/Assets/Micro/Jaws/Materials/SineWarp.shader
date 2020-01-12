@@ -72,7 +72,10 @@
 				_WaterColor -= (i.screenUV.y + _WaterDeepOffset) * _WaterDeep;
 				fixed4 grab = tex2Dproj(_GrabTexture, i.screenUV + float4( sin((_Time.x * _TimeTest)+i.screenUV.x* _Test1 + i.screenUV.y * _Test3)* _Test2, 0, 0, 0));
 				fixed4 tex = tex2D(_MainTex, i.uv);
-				grab.rgb *= tex.a;
+
+				tex.a = ceil(tex.a);
+				//grab.rgb *= tex.a;
+
 				return grab * _WaterColor;
 			}
 			ENDCG
