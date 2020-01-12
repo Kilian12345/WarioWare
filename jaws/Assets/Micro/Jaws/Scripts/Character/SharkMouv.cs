@@ -12,6 +12,8 @@ namespace Game.Jaws
         [SerializeField] Rigidbody2D sharkBody;
         [SerializeField] Collider2D isGround;
 
+        SpriteRenderer childRender;
+
         [SerializeField] Vector2 directionRight;
         [SerializeField] Vector2 directionLeft;
         Vector2 jumpDirection;
@@ -36,6 +38,7 @@ namespace Game.Jaws
         {
             mouseBasePosition = 0;
 
+            childRender = GetComponentInChildren<SpriteRenderer>();
             sharkBody = GetComponent<Rigidbody2D>();
             isGround = GetComponentInChildren<Collider2D>();
 
@@ -58,6 +61,8 @@ namespace Game.Jaws
                 Mouvement();
             }
 
+            Flip();
+
         }
 
         private void OnCollisionStay2D(Collision2D collision)
@@ -65,6 +70,18 @@ namespace Game.Jaws
             if (collision.gameObject.layer == 4)
             {
                 isGrounded = true;
+            }
+        }
+
+        void Flip()
+        {
+            if(mouseBasePosition > 0)
+            {
+                childRender.flipX = true;
+            }
+            else
+            {
+                childRender.flipX = false;
             }
         }
 
@@ -86,7 +103,14 @@ namespace Game.Jaws
             else if (mouseBasePosition > 0)
             {jumpDirection = directionRight;}
 
-            mouseBasePosition = 0;
+            if (childRender.flipX == true)
+            {
+                mouseBasePosition = 0.1f;
+            }
+            else
+            {
+                mouseBasePosition = 0;
+            }
 
             sharkBody.AddForce(jumpDirection * 500.0f);
         }
