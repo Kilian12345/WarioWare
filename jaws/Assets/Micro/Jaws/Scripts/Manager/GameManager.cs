@@ -60,6 +60,8 @@ namespace Game.Jaws
                 Macro.Lose();
                 StartCoroutine(LoseEnd());
                 doneOnce = true;
+
+                WinEndForced();
             }
 
             if (win == true && doneOnce == false)
@@ -78,6 +80,8 @@ namespace Game.Jaws
                     StartCoroutine(WinEnd());
                     doneOnce = true;
                 }
+
+                WinEndForced();
             }
 
         }
@@ -103,6 +107,12 @@ namespace Game.Jaws
             audioSource.Play();
 
             yield return new WaitForSeconds(1.8f);
+            Macro.EndGame();
+        }
+
+        IEnumerator WinEndForced()
+        {
+            yield return new WaitForSeconds(3f);
             Macro.EndGame();
         }
     }

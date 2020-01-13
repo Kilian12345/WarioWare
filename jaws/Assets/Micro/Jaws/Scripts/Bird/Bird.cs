@@ -27,6 +27,8 @@ namespace Game.Jaws
         AudioSource audioSource;
         public AudioClip LaughClip;
 
+        bool doneOnce = false;
+
         private void Start()
         {
             audioSource = GetComponent<AudioSource>();
@@ -44,8 +46,6 @@ namespace Game.Jaws
         protected override void OnGameStart()
         {
             Macro.DisplayActionVerb("Eat!", 1);
-            audioSource.clip = LaughClip;
-            audioSource.Play();
         }
 
         protected override void OnActionVerbDisplayEnd()
@@ -76,10 +76,11 @@ namespace Game.Jaws
 
             AnimTiming();
 
-            if(animator.GetBool("StopLaugh") == true)
+            if(animator.GetBool("StopLaugh") == false && doneOnce == false)
             {
                 audioSource.clip = LaughClip;
                 audioSource.Play();
+                doneOnce = true;
             }
         }
 
@@ -88,6 +89,12 @@ namespace Game.Jaws
             if(transform.position.x < BeginPositionBird.position.x && transform.position.x > BeginPositionBird.position.x - 0.5f)
             {
                 animator.SetBool("StopLaugh", true);
+                doneOnce = false;
+            }
+
+            if (transform.position.x < BeginPositionBird.position.x + 1.5f && transform.position.x > BeginPositionBird.position.x + 1.3f)
+            {
+                animator.SetBool("StopLaugh", false);
             }
         }
 
