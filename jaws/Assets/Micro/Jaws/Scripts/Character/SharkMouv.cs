@@ -12,7 +12,7 @@ namespace Game.Jaws
         [SerializeField] Transform PointB;
 
         [SerializeField] Rigidbody2D sharkBody;
-        [SerializeField] Collider2D isGround;
+        Collider2D isGround;
 
         SpriteRenderer childRender;
         Animator animator;
@@ -35,6 +35,7 @@ namespace Game.Jaws
         float targetPosition;
 
         bool isGrounded;
+        bool isGroundedObstacle;
 
 
 
@@ -73,9 +74,6 @@ namespace Game.Jaws
                 Mouvement();
             }
 
-            Debug.Log(animator.GetBool("IsJumpingRight") + " IsJumpingRight");
-            Debug.Log(animator.GetBool("IsJumpingLeft") + " IsJumpingLeft");
-
             Flip();
 
         }
@@ -85,6 +83,39 @@ namespace Game.Jaws
             if (collision.gameObject.layer == 4)
             {
                 isGrounded = true;
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+
+            if (collision.gameObject.layer == 2)
+            {
+                isGroundedObstacle = true;
+                StartCoroutine(CheckCollision());
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision.gameObject.layer == 2)
+            {
+                isGroundedObstacle = false;
+            }
+        }
+
+        IEnumerator CheckCollision()
+        {
+            if (isGroundedObstacle == true)
+            {
+
+                yield return new WaitForSeconds(0.5f);
+
+                if (isGroundedObstacle == true)
+                {
+                    animator.SetBool("IsDeath", true);
+                    gameMana.lose = true;
+                }
             }
         }
 

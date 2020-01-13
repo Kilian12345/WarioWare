@@ -6,6 +6,7 @@ namespace Game.Jaws
     {
         [SerializeField] GameObject bite;
         [SerializeField] GameObject feather;
+        [SerializeField] GameObject Shark;
         Transform parentTrans;
         GameManager gameMana;
 
@@ -13,6 +14,7 @@ namespace Game.Jaws
         [SerializeField] Transform BeginPositionBird;
 
         Animator animator;
+        Animator animatorShark;
 
         Vector3 startPoint;
 
@@ -24,7 +26,8 @@ namespace Game.Jaws
 
         private void Start()
         {
-            animator = GetComponent<Animator>();
+            animator = GetComponentInChildren<Animator>();
+            animatorShark = Shark.GetComponent<Animator>();
             gameMana = FindObjectOfType<GameManager>();
             parentTrans = GameObject.Find("___Character___").transform;
             startPoint = transform.position;
@@ -59,6 +62,7 @@ namespace Game.Jaws
 
             if(transform.position == endPositionBird.position)
             {
+                animatorShark.SetBool("IsDeath", true);
                 animator.SetBool("StopLaugh", false);
                 GetComponentInChildren<SpriteRenderer>().flipX = true;
                 gameMana.lose = true;
@@ -69,7 +73,7 @@ namespace Game.Jaws
 
         void AnimTiming()
         {
-            if(transform.localPosition.x < BeginPositionBird.localPosition.x && transform.localPosition.x > BeginPositionBird.localPosition.x - 0.5f)
+            if(transform.position.x < BeginPositionBird.position.x && transform.position.x > BeginPositionBird.position.x - 0.5f)
             {
                 animator.SetBool("StopLaugh", true);
             }
@@ -85,6 +89,7 @@ namespace Game.Jaws
                 gameMana.win = true;
                 Destroy(gameObject);
             }
+
         }
     }
 }

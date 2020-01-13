@@ -48,7 +48,7 @@ namespace Game.Jaws
             if(lose == true && doneOnce == false)
             {
                 Macro.Lose();
-                Macro.EndGame();
+                StartCoroutine(LoseEnd());
                 doneOnce = true;
             }
 
@@ -64,7 +64,13 @@ namespace Game.Jaws
             }
         }
 
-        IEnumerator WinEnd()
+        IEnumerator LoseEnd()
+        {
+            yield return new WaitForSeconds(1);
+            Macro.EndGame();
+        }
+
+            IEnumerator WinEnd()
         {
                 if (IsSharkFliped == true)
                 {

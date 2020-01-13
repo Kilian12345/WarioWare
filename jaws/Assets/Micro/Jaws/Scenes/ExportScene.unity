@@ -439,7 +439,6 @@ MonoBehaviour:
   PointA: {fileID: 1189239068}
   PointB: {fileID: 1937071475}
   sharkBody: {fileID: 0}
-  isGround: {fileID: 0}
   directionRight: {x: 0.3, y: 1}
   directionLeft: {x: -0.3, y: 1}
   sharkSpeed: 0.01
@@ -830,8 +829,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bite: {fileID: 7086351935248415933, guid: c91c898e8ad45c84c858c11dcb9438a9, type: 3}
   feather: {fileID: 3961947945371706360, guid: ee45c2087d73f0441b3569f6eb1b45a2, type: 3}
+  Shark: {fileID: 848058220}
   endPositionBird: {fileID: 366513227}
-  BeginPositionBird: {fileID: 0}
+  BeginPositionBird: {fileID: 1317348411}
   timeInBpm: 8
 --- !u!61 &1085039083
 BoxCollider2D:
@@ -1001,7 +1001,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317348410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.4, y: 1.3699999, z: 16}
+  m_LocalPosition: {x: 28.27, y: 1.3699999, z: 16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 394133896}
