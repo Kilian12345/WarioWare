@@ -41,9 +41,12 @@ namespace Game.Jaws
 
         Transform transParent;
 
-        GameManager gameMana;
+        AudioSource audioSource;
+        public AudioClip SlpashSound;
 
 		private void Start () {
+
+            audioSource = GetComponent<AudioSource>();
 
             transParent = GameObject.Find("___SpawnZone___").transform;
 
@@ -141,8 +144,8 @@ namespace Game.Jaws
 		private void OnTriggerEnter2D(Collider2D col) {
 			Rigidbody2D rb = col.GetComponent<Rigidbody2D>();
 			Splash(col, rb.velocity.y * collisionVelocityFactor);
-            gameMana.audioSource.clip = gameMana.SplashClip;
-            gameMana.audioSource.Play();
+            audioSource.clip = SlpashSound;
+            audioSource.Play();
         }
 
 		public void Splash (Collider2D col, float force) {

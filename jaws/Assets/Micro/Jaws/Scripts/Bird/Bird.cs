@@ -25,7 +25,6 @@ namespace Game.Jaws
         float bpm;
 
         AudioSource audioSource;
-        public AudioClip CrocClip;
         public AudioClip LaughClip;
 
         private void Start()
@@ -45,6 +44,8 @@ namespace Game.Jaws
         protected override void OnGameStart()
         {
             Macro.DisplayActionVerb("Eat!", 1);
+            audioSource.clip = LaughClip;
+            audioSource.Play();
         }
 
         protected override void OnActionVerbDisplayEnd()
@@ -97,9 +98,6 @@ namespace Game.Jaws
             Instantiate(feather, transform.position, Quaternion.identity, parentTrans);
             if (collision.gameObject.layer == 0)
             {
-                audioSource.Stop();
-                audioSource.clip = CrocClip;
-                audioSource.Play();
                 gameMana.win = true;
                 Destroy(gameObject);
             }

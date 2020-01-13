@@ -30,11 +30,12 @@ namespace Game.Jaws
         [Header("Sound")]
         [Space(20)]
 
-        public AudioClip SplashClip;
         public AudioClip RotClip;
+        public AudioClip CrocClip;
         [HideInInspector] public AudioSource audioSource;
 
         bool doneOnce = false;
+        bool doneOnce2 = false;
 
         private void Start()
         {
@@ -63,6 +64,13 @@ namespace Game.Jaws
 
             if (win == true && doneOnce == false)
             {
+                if (doneOnce2 == false)
+                {
+                    audioSource.clip = CrocClip;
+                    audioSource.Play();
+                    doneOnce2 = true;
+                }
+
                 Macro.Win();
 
                 if (IsSharkGrounded == true)
@@ -71,6 +79,7 @@ namespace Game.Jaws
                     doneOnce = true;
                 }
             }
+
         }
 
         IEnumerator LoseEnd()
