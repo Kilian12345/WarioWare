@@ -24,8 +24,13 @@ namespace Game.Jaws
         public int timeInBpm = 8;
         float bpm;
 
+        AudioSource audioSource;
+        public AudioClip CrocClip;
+        public AudioClip LaughClip;
+
         private void Start()
         {
+            audioSource = GetComponent<AudioSource>();
             animator = GetComponentInChildren<Animator>();
             animatorShark = Shark.GetComponent<Animator>();
             gameMana = FindObjectOfType<GameManager>();
@@ -69,6 +74,12 @@ namespace Game.Jaws
             }
 
             AnimTiming();
+
+            if(animator.GetBool("StopLaugh") == true)
+            {
+                audioSource.clip = LaughClip;
+                audioSource.Play();
+            }
         }
 
         void AnimTiming()
@@ -86,6 +97,9 @@ namespace Game.Jaws
             Instantiate(feather, transform.position, Quaternion.identity, parentTrans);
             if (collision.gameObject.layer == 0)
             {
+                audioSource.Stop();
+                audioSource.clip = CrocClip;
+                audioSource.Play();
                 gameMana.win = true;
                 Destroy(gameObject);
             }

@@ -38,7 +38,6 @@ namespace Game.Jaws
         bool isGroundedObstacle;
 
 
-
         private void Start()
         {
             gameMana = FindObjectOfType<GameManager>();

@@ -27,10 +27,19 @@ namespace Game.Jaws
         [HideInInspector] public bool IsSharkGrounded;
         [HideInInspector] public bool IsSharkFliped;
 
+        [Header("Sound")]
+        [Space(20)]
+
+        public AudioClip SplashClip;
+        public AudioClip RotClip;
+        [HideInInspector] public AudioSource audioSource;
+
         bool doneOnce = false;
 
         private void Start()
         {
+            audioSource = GetComponent<AudioSource>();
+
             if(Macro.Difficulty == 2)
             {
                 Instantiate(Obstacle1, new Vector3(Random.Range(-5.4f, 5.4f), -0.9f, 0), Quaternion.identity, transform);
@@ -70,7 +79,7 @@ namespace Game.Jaws
             Macro.EndGame();
         }
 
-            IEnumerator WinEnd()
+        IEnumerator WinEnd()
         {
                 if (IsSharkFliped == true)
                 {
@@ -80,6 +89,9 @@ namespace Game.Jaws
                 {
                     Instantiate(BubbleParticle, SharkHead1.transform.position, Quaternion.identity, Shark);
                 }
+
+            audioSource.clip = RotClip;
+            audioSource.Play();
 
             yield return new WaitForSeconds(1.8f);
             Macro.EndGame();
