@@ -10,6 +10,10 @@ namespace Game.Jaws
         GameManager gameMana;
 
         [SerializeField] Transform endPositionBird;
+        [SerializeField] Transform BeginPositionBird;
+
+        Animator animator;
+
         Vector3 startPoint;
 
         float mouvTime;
@@ -20,6 +24,7 @@ namespace Game.Jaws
 
         private void Start()
         {
+            animator = GetComponent<Animator>();
             gameMana = FindObjectOfType<GameManager>();
             parentTrans = GameObject.Find("___Character___").transform;
             startPoint = transform.position;
@@ -54,7 +59,19 @@ namespace Game.Jaws
 
             if(transform.position == endPositionBird.position)
             {
+                animator.SetBool("StopLaugh", false);
+                GetComponentInChildren<SpriteRenderer>().flipX = true;
                 gameMana.lose = true;
+            }
+
+            AnimTiming();
+        }
+
+        void AnimTiming()
+        {
+            if(transform.localPosition.x < BeginPositionBird.localPosition.x && transform.localPosition.x > BeginPositionBird.localPosition.x - 0.5f)
+            {
+                animator.SetBool("StopLaugh", true);
             }
         }
 
